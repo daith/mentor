@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: curl-pod
+spec:
+  serviceAccountName: your-service-account-name
+  containers:
+  - name: curl-container
+    image: curlimages/curl:latest
+    command: ["curl", "https://kubernetes.default.svc/api/v1/namespaces/default/pods"]
+
